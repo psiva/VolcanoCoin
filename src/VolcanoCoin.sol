@@ -2,7 +2,7 @@
 
 pragma solidity ^0.8.0;
 
-import "@openzeppelin/contracts/access/Ownable.sol";
+import "openzeppelin-contracts/access/Ownable.sol";
 
 /**
  @title Contract to implement functionality for management of VolcanoCoin
@@ -51,10 +51,7 @@ contract VolcanoCoin is Ownable {
     @param _to - Recepient's address
     @param _amount - Amount to transfer
     */
-    function transfer(address payable _to, uint _amount)
-        external
-        returns (bool)
-    {
+    function transfer(address _to, uint _amount) external returns (bool) {
         require(_amount > 0 && _amount <= balances[msg.sender]);
         balances[msg.sender] = balances[msg.sender] - _amount;
         balances[_to] = balances[_to] + _amount;
