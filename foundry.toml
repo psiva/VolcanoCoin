@@ -8,3 +8,6 @@ libs = ['lib']
 [rpc_endpoints]
 goerli = "${ETH_RPC_URL}"
 
+[etherscan]
+goerli = {key="${ETHERSCAN_API_KEY}",chain="goerli"}
+
